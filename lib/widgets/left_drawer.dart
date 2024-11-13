@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial6/menu.dart';
+import 'package:tutorial6/screens/list_moodentry.dart';
 import 'package:tutorial6/screens/moodentry_form.dart';
 
 
@@ -58,8 +59,19 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MoodEntryFormPage(),
+                    builder: (context) => const MoodEntryFormPage(),
                   ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Daftar Mood'),
+            onTap: () {
+              // Route menu ke halaman mood
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MoodEntryPage()),
+              );
             },
           ),
         ],
